@@ -20,9 +20,62 @@ function getComputerChoice() {
     return output;
 }
 
+//Plays a single round of rock-paper-scissors
+function playRound(playerSelection, computerSelection) {
 
+    console.log(`Player = ${playerSelection} || Computer = ${computerSelection}`);
+
+    if(playerSelection===computerSelection){
+        console.log(`It's a tie! ${playerSelection} is equal to ${computerSelection}`);
+        return;
+    } else {
+        
+        switch(playerSelection) {
+            case 'rock':
+                switch(computerSelection) {
+                    case 'paper':
+                        console.log("You lose! Paper beats Rock");
+                    break;
+                    case 'scissors':
+                        console.log("You win! Rock beats scissors");
+                    break;
+                }
+            break;
+
+            case 'paper':
+                switch(computerSelection) {
+                    case 'rock':
+                        console.log("You win! Paper beats Rock");
+                    break;                  
+                    case 'scissors':
+                        console.log("You lose! Scissors beats Paper")
+                    break;
+                }
+            break;
+                
+            case 'scissors':
+                switch(computerSelection) {
+                    case 'rock':
+                        console.log("You lose! Rock beats Scissors");
+                    break;
+                    case 'paper':
+                        console.log("You win! Scissors beats Paper");
+                    break;
+                }
+            break;
+           
+        } // end if playerSelection switch
+    } // end of else
+
+
+    
+
+
+}
 
 const playerChoice = prompt('Choose rock,paper or scissors:').toLowerCase();
 
+    playRound(playerChoice,getComputerChoice());
 
-console.log(playRound(playerChoice,getComputerChoice()));
+
+
