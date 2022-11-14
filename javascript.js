@@ -1,3 +1,4 @@
+
 // generate random number between 0-2 and return rock,paper or scissors 
 function getComputerChoice() {
 
@@ -6,13 +7,13 @@ function getComputerChoice() {
 
         switch(randomNum) {
             case 0:
-                output='Rock';
+                output='rock';
                 break;
             case 1:
-                output='Paper';
+                output='paper';
                 break;
             case 2:
-                output='Scissors';
+                output='scissors';
                 break;            
         }
 
@@ -20,6 +21,8 @@ function getComputerChoice() {
 }
 
 
-for (let i=0; i<10 ; i++){
-    console.log(getComputerChoice());
-}
+
+const playerChoice = prompt('Choose rock,paper or scissors:').toLowerCase();
+
+
+console.log(playRound(playerChoice,getComputerChoice()));
