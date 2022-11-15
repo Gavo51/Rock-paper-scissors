@@ -26,9 +26,34 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Player = ${playerSelection} || Computer = ${computerSelection}`);
 
     if(playerSelection===computerSelection){
-        console.log(`It's a tie! ${playerSelection} is equal to ${computerSelection}`);
-        return;
+        return `It's a tie! ${playerSelection} is equal to ${computerSelection}`;
+        
     } else {
+
+    /*   
+        if(playerSelection === 'rock' && computerSelection === 'scissors'){            
+                return `You win! ${playerSelection} beats ${computerSelection}`;
+            } else {
+                return `You lose! ${computerSelection} beats ${playerSelection} `;
+            }
+        
+
+        if(playerSelection === 'paper' && computerSelection === 'rock'){            
+                return `You win! ${playerSelection} beats ${computerSelection}`;
+            } else {
+                return `You lose! ${computerSelection} beats ${playerSelection} `;
+            }
+        
+
+        if(playerSelection === 'scissors' && computerSelection === 'paper'){            
+                return `You win! ${playerSelection} beats ${computerSelection}`;
+            } else {
+                return `You lose! ${computerSelection} beats ${playerSelection} `;
+            }
+    }*/
+
+    
+
         
         switch(playerSelection) {
             case 'rock':
@@ -65,17 +90,20 @@ function playRound(playerSelection, computerSelection) {
             break;
            
         } // end if playerSelection switch
-    } // end of else
+
+    
+
+    } // end of function
 
 
     
 
 
-}
+
 
 const playerChoice = prompt('Choose rock,paper or scissors:').toLowerCase();
 
-    playRound(playerChoice,getComputerChoice());
+    console.log(playRound(playerChoice,getComputerChoice()));
 
 
 
