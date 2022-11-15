@@ -59,10 +59,10 @@ function playRound(playerSelection, computerSelection) {
             case 'rock':
                 switch(computerSelection) {
                     case 'paper':
-                        console.log("You lose! Paper beats Rock");
+                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
                     break;
                     case 'scissors':
-                        console.log("You win! Rock beats scissors");
+                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
                     break;
                 }
             break;
@@ -70,10 +70,10 @@ function playRound(playerSelection, computerSelection) {
             case 'paper':
                 switch(computerSelection) {
                     case 'rock':
-                        console.log("You win! Paper beats Rock");
+                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
                     break;                  
                     case 'scissors':
-                        console.log("You lose! Scissors beats Paper")
+                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
                     break;
                 }
             break;
@@ -81,10 +81,10 @@ function playRound(playerSelection, computerSelection) {
             case 'scissors':
                 switch(computerSelection) {
                     case 'rock':
-                        console.log("You lose! Rock beats Scissors");
+                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
                     break;
                     case 'paper':
-                        console.log("You win! Scissors beats Paper");
+                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
                     break;
                 }
             break;
