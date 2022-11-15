@@ -51,10 +51,7 @@ function playRound(playerSelection, computerSelection) {
                 return `You lose! ${computerSelection} beats ${playerSelection} `;
             }
     }*/
-
-    
-
-        
+       
         switch(playerSelection) {
             case 'rock':
                 switch(computerSelection) {
@@ -91,19 +88,20 @@ function playRound(playerSelection, computerSelection) {
            
         } // end if playerSelection switch
 
+    } // end of else
+
+} // end of playRound function
+
+
+
     
 
-    } // end of function
 
 
-    
+const playerSelection = prompt('Choose rock,paper or scissors:').toLowerCase();
+const computerSelection = getComputerChoice()
 
-
-
-
-const playerChoice = prompt('Choose rock,paper or scissors:').toLowerCase();
-
-    console.log(playRound(playerChoice,getComputerChoice()));
+    console.log(playRound(playerSelection,computerSelection));
 
 
 
