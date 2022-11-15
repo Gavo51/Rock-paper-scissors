@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Player = ${playerSelection} || Computer = ${computerSelection}`);
 
     if(playerSelection===computerSelection){
-        return `It's a tie! ${playerSelection} is equal to ${computerSelection}`;
+        console.log(`It's a tie! ${playerSelection} is equal to ${computerSelection}`);
         
     } else {
 
@@ -92,16 +92,30 @@ function playRound(playerSelection, computerSelection) {
 
 } // end of playRound function
 
+function game() {
+
+    for (let i=1; i<=5; i++){
+
+        console.log(`ROUND ${i} !!`);
+
+        const playerSelection = prompt('Choose rock,paper or scissors:').toLowerCase();
+        const computerSelection = getComputerChoice();
+
+        playRound(playerSelection,computerSelection);
+
+    }
+}
+
+game();
 
 
     
 
 
 
-const playerSelection = prompt('Choose rock,paper or scissors:').toLowerCase();
-const computerSelection = getComputerChoice()
 
-    console.log(playRound(playerSelection,computerSelection));
+
+    
 
 
 
