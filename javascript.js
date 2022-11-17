@@ -1,4 +1,14 @@
 
+const buttons = document.querySelectorAll(".btn");
+const roundResult = document.querySelector(".results-box");
+
+
+
+buttons.forEach(button => { button.addEventListener('click',playRound);});
+
+
+
+
 // generate random number between 0-2 and return rock,paper or scissors 
 function getComputerChoice() {
 
@@ -21,12 +31,15 @@ function getComputerChoice() {
 }
 
 //Plays a single round of rock-paper-scissors
-function playRound(playerSelection, computerSelection) {
+function playRound(e) {
+
+    const playerSelection= e.target.textContent.toLowerCase();
+    const computerSelection = getComputerChoice();
 
     console.log(`Player = ${playerSelection} || Computer = ${computerSelection}`);
 
     if(playerSelection===computerSelection){
-        console.log(`It's a tie! ${playerSelection} is equal to ${computerSelection}`);
+        roundResult.textContent=`It's a tie! ${playerSelection} is equal to ${computerSelection}`;
         return;
     } else {
   
@@ -34,11 +47,11 @@ function playRound(playerSelection, computerSelection) {
             case 'rock':
                 switch(computerSelection) {
                     case 'paper':
-                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                        roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         return 0;
                     break;
                     case 'scissors':
-                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                        roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         return 1;
                     break;
                 }
@@ -47,11 +60,11 @@ function playRound(playerSelection, computerSelection) {
             case 'paper':
                 switch(computerSelection) {
                     case 'rock':
-                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                        roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         return 1;
                     break;                  
                     case 'scissors':
-                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                        roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         return 0;
                     break;
                 }
@@ -60,11 +73,11 @@ function playRound(playerSelection, computerSelection) {
             case 'scissors':
                 switch(computerSelection) {
                     case 'rock':
-                        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+                        roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         return 0;
                     break;
                     case 'paper':
-                        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
+                        roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         return 1;
                     break;
                 }
@@ -75,6 +88,8 @@ function playRound(playerSelection, computerSelection) {
     } // end of else
 
 } // end of playRound function
+
+
 
 function game() {
 
@@ -110,7 +125,7 @@ function game() {
    
 }
 
-game();
+//game();
 
 
     
