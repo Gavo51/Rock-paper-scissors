@@ -29,29 +29,7 @@ function playRound(playerSelection, computerSelection) {
         console.log(`It's a tie! ${playerSelection} is equal to ${computerSelection}`);
         return;
     } else {
-
-    /*   
-        if(playerSelection === 'rock' && computerSelection === 'scissors'){            
-                return `You win! ${playerSelection} beats ${computerSelection}`;
-            } else {
-                return `You lose! ${computerSelection} beats ${playerSelection} `;
-            }
-        
-
-        if(playerSelection === 'paper' && computerSelection === 'rock'){            
-                return `You win! ${playerSelection} beats ${computerSelection}`;
-            } else {
-                return `You lose! ${computerSelection} beats ${playerSelection} `;
-            }
-        
-
-        if(playerSelection === 'scissors' && computerSelection === 'paper'){            
-                return `You win! ${playerSelection} beats ${computerSelection}`;
-            } else {
-                return `You lose! ${computerSelection} beats ${playerSelection} `;
-            }
-    }*/
-       
+  
         switch(playerSelection) {
             case 'rock':
                 switch(computerSelection) {
@@ -103,9 +81,9 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i=1; i<=5; i++){
+//    for (let i=1; i<=5; i++){
 
-        console.log(`ROUND ${i} !!`);
+//      console.log(`ROUND ${i} !!`);
 
         const playerSelection = prompt('Choose rock,paper or scissors:').toLowerCase();
         const computerSelection = getComputerChoice();
@@ -118,7 +96,7 @@ function game() {
             computerScore++;
         }
 
-    }
+//   }   
 
     console.log(`FINAL SCORES: PLAYER = ${playerScore} || COMPUTER=${computerScore}`);
 
