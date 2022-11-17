@@ -17,7 +17,6 @@ body {
     display: block;
 }
 
-
 .container {
     width:900px;   
     border: 3px solid black;
@@ -46,4 +45,15 @@ body {
     background-color: dodgerblue;
     border-style:none;
     width: 150px;
+}
+
+.cpu-display {
+    width:200px;
+    height:100px;
+    padding:25px 0;
+    color:white;
+    text-align: center;
+    background-color:rgb(255, 32, 32);
+    font-weight: 900;
+    font-size: larger;
 }
