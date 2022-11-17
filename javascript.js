@@ -1,8 +1,7 @@
 
 const buttons = document.querySelectorAll(".btn");
 const roundResult = document.querySelector(".results-box");
-
-
+const cpuDisplay = document.querySelector(".cpu-display");
 
 buttons.forEach(button => { button.addEventListener('click',playRound);});
 
@@ -35,6 +34,8 @@ function playRound(e) {
 
     const playerSelection= e.target.textContent.toLowerCase();
     const computerSelection = getComputerChoice();
+
+    cpuDisplay.textContent = computerSelection.toUpperCase();
 
     console.log(`Player = ${playerSelection} || Computer = ${computerSelection}`);
 
@@ -110,6 +111,7 @@ function game() {
         }else if(result ===0) {
             computerScore++;
         }
+
 
 //   }   
 
