@@ -10,20 +10,35 @@ const container = document.querySelector(".container");
 
 buttons.forEach(button => button.addEventListener('click',playRound));
 
+
+function showFinalResults() {
+
+    const winnerAnnounment = document.createElement("h1");
+    const finalScores = document.createElement("h2");
+
+    if(playerScore==5){
+        winnerAnnounment.textContent = 'THE PLAYER WINS!';
+    }else if( computerScore == 5){
+        winnerAnnounment.textContent = 'THE CPU WINS!';
+    }
+
+    finalScores.textContent = "PLAYER = "+playerScore+" / CPU= "+computerScore;
+
+    
+    container.setAttribute('style','align-items:center;padding:20px 0');
+    container.appendChild(winnerAnnounment);
+    container.appendChild(finalScores);
+
+}
+
+
 function updateScoreboard() {
 
-    if(playerScore == 5){
-        scoreboard.textContent = `THE PLAYER WINS! FINAL SCORES >> PLAYER = ${playerScore} || CPU = ${computerScore}`;    
+    if(playerScore == 5 || computerScore == 5){
         while(container.firstChild){
             container.removeChild(container.firstChild);
-        }
-    
-        return;
-    } else if(computerScore == 5){
-        scoreboard.textContent = `THE CPU WINS! FINAL SCORES >> PLAYER = ${playerScore} || CPU = ${computerScore}`;              
-        while(container.firstChild){
-            container.removeChild(container.firstChild);
-        }
+        } 
+        showFinalResults();   
         return;
     } else {
         scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
