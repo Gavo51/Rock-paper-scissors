@@ -10,20 +10,20 @@ const container = document.querySelector(".container");
 
 buttons.forEach(button => button.addEventListener('click',playRound));
 
-
-
 function updateScoreboard() {
 
     if(playerScore == 5){
         scoreboard.textContent = `THE PLAYER WINS! FINAL SCORES >> PLAYER = ${playerScore} || CPU = ${computerScore}`;    
-        buttons.forEach(button => { button.remove();});
-        cpuDisplay.remove();
-        doc
+        while(container.firstChild){
+            container.removeChild(container.firstChild);
+        }
+    
         return;
     } else if(computerScore == 5){
         scoreboard.textContent = `THE CPU WINS! FINAL SCORES >> PLAYER = ${playerScore} || CPU = ${computerScore}`;              
-        buttons.forEach(button => { button.remove();});
-        cpuDisplay.remove();
+        while(container.firstChild){
+            container.removeChild(container.firstChild);
+        }
         return;
     } else {
         scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
