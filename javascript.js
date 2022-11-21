@@ -8,19 +8,7 @@ const cpuDisplay = document.querySelector(".cpu-display");
 const scoreboard = document.querySelector(".scoreboard");
 const container = document.querySelector(".container");
 
-buttons.forEach(function(button){ 
-
-    if(computerScore<5 || playerScore<5){
-        button.addEventListener('click',playRound);
-    } else {
-        if(playerScore === 5){
-            scoreboard.textContent = 'THE PLAYER WINS!';
-        } else if(computerScore === 5){
-            scoreboard.textContent = 'THE CPU WINS!';       
-        }
-    }
-
-});
+buttons.forEach(button => button.addEventListener('click',playRound));
 
 
 
