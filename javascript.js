@@ -1,20 +1,29 @@
 let playerScore=0;
 let computerScore=0;
+let roundCounter=0;
 
 
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".choice-btn");
 const roundResult = document.querySelector(".results-box");
 const cpuDisplay = document.querySelector(".cpu-display");
 const scoreboard = document.querySelector(".scoreboard");
 const container = document.querySelector(".container");
+const roundDisplay = document.querySelector(".round-counter");
 
 buttons.forEach(button => button.addEventListener('click',playRound));
+
+console.log(roundCounter);
+console.log(playerScore);
+console.log(computerScore);
+
+roundDisplay.textContent= `ROUND ${roundCounter}`;
 
 
 function showFinalResults() {
 
     const winnerAnnounment = document.createElement("h1");
     const finalScores = document.createElement("h2");
+    const replayBtn = document.createElement("button");
 
     if(playerScore==5){
         winnerAnnounment.textContent = 'THE PLAYER WINS!';
@@ -24,13 +33,18 @@ function showFinalResults() {
 
     finalScores.textContent = "PLAYER = "+playerScore+" / CPU= "+computerScore;
 
+    replayBtn.textContent = 'PLAY AGAIN';
+    replayBtn.classList.add('btn','border');
+    replayBtn.addEventListener('click',function() {location.reload()});
+
+
     
     container.setAttribute('style','align-items:center;padding:20px 0');
     container.appendChild(winnerAnnounment);
     container.appendChild(finalScores);
+    container.appendChild(replayBtn);
 
 }
-
 
 function updateScoreboard() {
 
@@ -43,6 +57,7 @@ function updateScoreboard() {
     } else {
         scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
         scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
+        roundCounter++;
         return;
     }
    
@@ -80,7 +95,7 @@ function playRound(e) {
     if(playerSelection===computerSelection){
         roundResult.textContent=`It's a tie! ${playerSelection} is equal to ${computerSelection}`;
         updateScoreboard();
-        return;
+        //return;
     } else {
   
         switch(playerSelection) {
@@ -90,13 +105,13 @@ function playRound(e) {
                         roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         computerScore++;
                         updateScoreboard();
-                        return 0;
+                        //return 0;
                     break;
                     case 'scissors':
                         roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         playerScore++;
                         updateScoreboard();
-                        return 1;
+                        //return 1;
                     break;
                 }
             break;
@@ -107,13 +122,13 @@ function playRound(e) {
                         roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         playerScore++;
                         updateScoreboard();
-                        return 1;
+                        //return 1;
                     break;                  
                     case 'scissors':
                         roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         computerScore++;
                         updateScoreboard();
-                        return 0;
+                        //return 0;
                     break;
                 }
             break;
@@ -124,20 +139,22 @@ function playRound(e) {
                         roundResult.textContent=`You lose! ${computerSelection} beats ${playerSelection}`;
                         computerScore++;
                         updateScoreboard();
-                        return 0;
+                        //return 0;
                     break;
                     case 'paper':
                         roundResult.textContent=`You win! ${playerSelection} beats ${computerSelection}`;
                         playerScore++;
                         updateScoreboard();
-                        return 1;
+                        //return 1;
                     break;
                 }
             break;
            
         } // end if playerSelection switch
 
-    } // end of else
+    } // end of else    
+
+    return;
 
 } // end of playRound function
 
