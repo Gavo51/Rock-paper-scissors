@@ -13,15 +13,32 @@
 <div class="title">ROCK-PAPER-SCISSORS</div>
 
 <div class="container border">
-    <h1 class="round-counter">ROUND 1</h1>
-    <div class="scoreboard">PLAYER = 0 || CPU = 0</div>
+    
     <div class="btn-container">
+        <h2>CHOOSE:</h2>
         <button id="rock-btn" class="btn choice-btn border">ROCK</button>
         <button id="paper-btn" class="btn choice-btn border">PAPER</button>
         <button id="scissors-btn" class="btn  choice-btn border">SCISSORS</button>    
     </div>
-    <div class="cpu-display border">CPU</div>
-    <div class="results-box">ROUND RESULTS</div>
+    <div class="display-container">
+        <div class="status-bar">
+            <h1 class="round-counter">ROUND 1</h1>
+            <div class="scoreboard">PLAYER = 0 || CPU = 0</div>
+        </div>
+        <div class="game-display">
+            <div class="selection-box">
+                <h1 class="name">PLAYER</h1>
+                <div class="player-selection box"></div>
+            </div>           
+            <h1>VS</h1>
+            <div class="selection-box">
+                <h1 class="name">CPU</h1>
+                <div class="cpu-selection box"></div>
+            </div>
+        </div>       
+        <div class="results-box">ROUND RESULTS</div>
+    </div>
+    
 </div>
     
 </body>

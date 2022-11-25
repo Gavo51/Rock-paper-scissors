@@ -27,26 +27,18 @@ body {
 
 .container {
     width:900px;   
-    display: flex;
-    flex-direction: column;
+    display: flex;   
     align-items: stretch;
     margin-top:50px;
-    row-gap: 20px;
 }
 
-.round-counter {
-    align-self: center;
-    margin-top:15px;
-}
 
-.scoreboard,.results-box {
-    padding:20px 0;
-    align-self:center;
-}
 
 .btn-container {
     display:flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding:20px;
     gap:15px;
 }
 
@@ -55,7 +47,7 @@ body {
     color: black;
     font-weight: 900;
     font-size: larger;
-    /*background-color: dodgerblue;*/
+    background-color: inherit;
     width: 150px;
 }
 
@@ -65,16 +57,65 @@ body {
     color:white
 }
 
-.cpu-display {
+.display-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-left:3px solid black;
+}
+
+/* GAME STATUS BAR */
+
+.status-bar {
+    display:flex;
+    justify-content:space-around;
+}
+
+.scoreboard {
+    font-size: 25px;
+}
+
+
+/* GAME DISPLAY */
+
+.game-display {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap:10px;
+}
+
+.name {
+    text-align: center;
+}
+
+.selection-box {
+    align-self: center;
+}
+
+
+.game-display h1{
+    align-self: center;
+}
+
+.box {
     width:200px;
-    height:100px;
-    
+    height:100px;    
     display:flex;
     justify-content: center;
     align-items: center;
     color:black;
+    border:3px solid black;
     text-align: center;
     font-size: 30px;
     font-weight: 900;
     align-self: center;
+}
+
+/* ROUND RESULTS DISPLAY */
+
+.results-box {
+    padding:20px;
+    text-align: center;
+    font-size: 40px;
 }

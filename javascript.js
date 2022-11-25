@@ -1,22 +1,21 @@
 let playerScore=0;
 let computerScore=0;
-let roundCounter=0;
+let roundCounter=1;
 
 
 const buttons = document.querySelectorAll(".choice-btn");
 const roundResult = document.querySelector(".results-box");
-const cpuDisplay = document.querySelector(".cpu-display");
+const cpuDisplay = document.querySelector(".cpu-selection");
+const playerDisplay = document.querySelector(".player-selection");
 const scoreboard = document.querySelector(".scoreboard");
 const container = document.querySelector(".container");
 const roundDisplay = document.querySelector(".round-counter");
 
 buttons.forEach(button => button.addEventListener('click',playRound));
 
-console.log(roundCounter);
-console.log(playerScore);
-console.log(computerScore);
 
-roundDisplay.textContent= `ROUND ${roundCounter}`;
+
+
 
 
 function showFinalResults() {
@@ -39,7 +38,7 @@ function showFinalResults() {
 
 
     
-    container.setAttribute('style','align-items:center;padding:20px 0');
+    container.setAttribute('style','align-items:center;padding:20px 0;flex-direction:column;row-gap:20px');
     container.appendChild(winnerAnnounment);
     container.appendChild(finalScores);
     container.appendChild(replayBtn);
@@ -47,6 +46,8 @@ function showFinalResults() {
 }
 
 function updateScoreboard() {
+
+    roundDisplay.textContent= `ROUND ${roundCounter}`;
 
     if(playerScore == 5 || computerScore == 5){
         while(container.firstChild){
@@ -56,10 +57,12 @@ function updateScoreboard() {
         return;
     } else {
         scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
-        scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;
+        scoreboard.textContent = `PLAYER = ${playerScore} || CPU = ${computerScore}`;       
         roundCounter++;
-        return;
+        return;       
     }
+
+
    
 }
 
@@ -90,12 +93,12 @@ function playRound(e) {
     const playerSelection= e.target.textContent.toLowerCase();
     const computerSelection = getComputerChoice();
 
+    playerDisplay.textContent = playerSelection.toUpperCase();
     cpuDisplay.textContent = computerSelection.toUpperCase();
 
     if(playerSelection===computerSelection){
         roundResult.textContent=`It's a tie! ${playerSelection} is equal to ${computerSelection}`;
         updateScoreboard();
-        //return;
     } else {
   
         switch(playerSelection) {
@@ -153,7 +156,6 @@ function playRound(e) {
         } // end if playerSelection switch
 
     } // end of else    
-
     return;
 
 } // end of playRound function
