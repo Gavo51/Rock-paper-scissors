@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
@@ -8,11 +9,11 @@
 
 .border {
     border:3px solid black;
-    border-radius: 10px;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Oswald','Roboto',sans-serif;
+    background-color: #36A1D4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +22,6 @@ body {
 .title {
     font-weight: 900;
     font-size: 40px;
-    font-family:Impact, sans-serif;
     margin-top:50px;
 }
 
